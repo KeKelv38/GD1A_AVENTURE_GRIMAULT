@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dontdestroy : MonoBehaviour
+public class dontdestroy : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         DontDestroyOnLoad(this);
     }
