@@ -37,5 +37,12 @@ public class PlayeMovement : MonoBehaviour
             _animator.SetFloat(_lastHorizontal, _movement.x);
             _animator.SetFloat(_lastVertical, _movement.y);
         }
-    }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            _animator.SetTrigger("PunchAttack");
+        }
+    }   
+
+   
 }
