@@ -38,6 +38,11 @@ public class PlayeMovement : MonoBehaviour
             _animator.SetFloat(_lastVertical, _movement.y);
         }
 
+        if(_movement == Vector2.zero)
+        {
+            _animator.Play("Player_Idle");
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && _movement.x>0f)
         {
             _animator.SetTrigger("PunchAttackRight");
