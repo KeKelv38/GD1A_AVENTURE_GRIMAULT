@@ -38,10 +38,26 @@ public class PlayeMovement : MonoBehaviour
             _animator.SetFloat(_lastVertical, _movement.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && _movement != Vector2.zero)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _movement.x>0f)
         {
-            _animator.SetTrigger("PunchAttack");
+            _animator.SetTrigger("PunchAttackRight");
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _movement.x < 0f)
+        {
+            _animator.SetTrigger("PunchAttackLeft");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _movement.y > 0f)
+        {
+            _animator.SetTrigger("PunchAttackBack");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _movement.y < 0f)
+        {
+            _animator.SetTrigger("PunchAttackFace");
+        }
+
     }   
 
    
