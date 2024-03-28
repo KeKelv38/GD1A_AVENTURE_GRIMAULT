@@ -11,11 +11,18 @@ public class PlayeMovement : MonoBehaviour
 
     private Rigidbody2D _rb;
     private Animator _animator;
+    private Vector2 lastMoveDirection;
 
     private const string _horizontal = "Horizontal";
     private const string _vertical = "Vertical";
     private const string _lastHorizontal = "LastHorizontal";
     private const string _lastVertical = "LastVertical";
+
+    public Transform Aim;
+    bool isWalking = false;
+
+
+
 
     private void Awake()
     {
@@ -36,6 +43,14 @@ public class PlayeMovement : MonoBehaviour
         {
             _animator.SetFloat(_lastHorizontal, _movement.x);
             _animator.SetFloat(_lastVertical, _movement.y);
+            isWalking = true;
+            lastMoveDirection = _movement;
+            Vector3 vector3 = Vector3.left * lastMoveDirection.x + Vector3.down * lastMoveDirection.y;
+            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+        }
+        else if (_movement.x != 0 || _movement.y != 0)
+        {
+            isWalking = true;
         }
 
         if(_movement == Vector2.zero)
@@ -63,7 +78,16 @@ public class PlayeMovement : MonoBehaviour
             _animator.SetTrigger("PunchAttackFace");
         }
 
-    }   
+    }
 
-   
+    private void FixedUpdate()
+    {
+        if (isWalking)
+        {
+            Vector3 vector3 = Vector3.left * _movement.x + Vector3.down * _movement.y;
+            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+        }
+    }
+
+
 }
