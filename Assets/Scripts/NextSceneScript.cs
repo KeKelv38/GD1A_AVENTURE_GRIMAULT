@@ -11,6 +11,7 @@ public class NextSceneScript : MonoBehaviour
         {
             if (toNextLevel)
             {
+
                 SceneController.instance.NextLevel();
             }
             else
