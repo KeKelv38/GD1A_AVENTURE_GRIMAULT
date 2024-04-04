@@ -5,11 +5,12 @@ using UnityEngine;
 public class Basic_Movement : MonoBehaviour
 {
     public Animator animator;
+    [SerializeField] public float Movespeed = 5f;
 
 
     void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f) * Movespeed;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);

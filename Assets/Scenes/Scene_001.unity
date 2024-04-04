@@ -600,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2040875556}
+  Movespeed: 3
 --- !u!212 &2040875554
 SpriteRenderer:
   m_ObjectHideFlags: 0
