@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AttackZone
   - enemy
+  - Door
   layers:
   - Default
   - TransparentFX
