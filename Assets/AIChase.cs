@@ -8,13 +8,11 @@ public class AIChase : MonoBehaviour
     public float speed;
     public float distanceBetween;
     public Animator animator;
-
-
     private float distance;
 
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
