@@ -10,6 +10,8 @@ public class AIChase : MonoBehaviour
     public Animator animator;
     private float distance;
 
+    public int damageOnCollision = 20;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -35,6 +37,15 @@ public class AIChase : MonoBehaviour
         else
         {
             animator.SetFloat("Magnitude", 0.0f);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damageOnCollision);
         }
     }
 }
