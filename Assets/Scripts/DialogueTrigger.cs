@@ -6,6 +6,13 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
 
     public bool isInRange;
+
+    private GameObject interactUI;
+
+    private void Awake()
+    {
+        
+    }
     void Update()
     {
         if(isInRange && Input.GetKeyDown(KeyCode.E))

@@ -404,7 +404,7 @@ MonoBehaviour:
     - "Tu es enfin r\xE9par\xE9. Je peux donc te donner la mission."
     - "J'ai r\xE9ussi \xE0 capturer un \"smile\". Je vais le signaler au vaisseau
       m\xE8re.\n"
-    - "Je te laisse tuer exterminer tous les autres. Je sais que tu ne me d\xE9cevras
+    - "Je te laisse exterminer tous les autres. Je sais que tu ne me d\xE9cevras
       pas."
   isInRange: 0
 --- !u!4 &682294211
@@ -651,7 +651,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2091423080}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: DisplayNextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &915756533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2608,7 +2620,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

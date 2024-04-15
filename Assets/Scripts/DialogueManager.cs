@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public Animator animator;
+
     private Queue<string> sentences;
     private void Awake()
     {
@@ -24,6 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        animator.SetBool("isOpen", true);
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -38,7 +42,7 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    void DisplayNextSentence()
+    public void DisplayNextSentence()
     {
         if(sentences.Count == 0)
         {
@@ -47,11 +51,23 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(0.02f);
+        }
     }
 
     void EndDialogue()
     {
-        Debug.Log("Fin du dialogue");
+
+        animator.SetBool("isOpen", false);
     }
 }
