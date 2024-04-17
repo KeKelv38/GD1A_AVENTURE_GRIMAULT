@@ -481,10 +481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d5a24c6f201b24e82d39f75805df9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
-  _healthBarFill: {fileID: 0}
-  _damageAmmount: 0
 --- !u!114 &629053097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3013,6 +3009,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392258978}
   m_CullTransparentMesh: 1
+--- !u!1 &1592888779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592888780}
+  m_Layer: 0
+  m_Name: CheckEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1592888780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592888779}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2040875555}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705803582
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2040875556}
   Movespeed: 3
+  checkEnemy: {fileID: 1592888780}
 --- !u!212 &2040875554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5089,7 +5117,8 @@ Transform:
   m_LocalPosition: {x: -3.14, y: 9.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1592888780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2040875556
@@ -5209,10 +5238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d5a24c6f201b24e82d39f75805df9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 0
-  _healthBarFill: {fileID: 0}
-  _damageAmmount: 10
 --- !u!114 &2040875561
 MonoBehaviour:
   m_ObjectHideFlags: 0

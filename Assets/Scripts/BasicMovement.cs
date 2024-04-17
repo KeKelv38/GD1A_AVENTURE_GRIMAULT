@@ -7,9 +7,8 @@ public class Basic_Movement : MonoBehaviour
     public Animator animator;
     [SerializeField] public float Movespeed = 5f;
 
-    private float attackTime = 0.25f;
-    private float attackCounter = 0.25f;
-    private bool isAttacking;
+
+    [SerializeField] Transform checkEnemy;
 
 
     void Update()
@@ -22,7 +21,7 @@ public class Basic_Movement : MonoBehaviour
 
         transform.position = transform.position + movement * Time.deltaTime;
 
-        if(animator.GetFloat("Horizontal") == 1)
+        if (animator.GetFloat("Horizontal") == 1)
         {
             animator.SetFloat("lastMoveX", animator.GetFloat("Horizontal"));
         }
@@ -31,24 +30,5 @@ public class Basic_Movement : MonoBehaviour
         {
             animator.SetFloat("lastMoveY", animator.GetFloat("Vertical"));
         }
-
-        if (isAttacking)
-        {
-
-            attackCounter -= Time.deltaTime;
-            if(attackCounter <= 0)
-            {
-                animator.SetBool("isAttacking", false);
-                isAttacking = false;
-            }
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            attackCounter = attackTime;
-            animator.SetBool("isAttacking", true);
-            isAttacking = true;
-        }
     }
-
 }

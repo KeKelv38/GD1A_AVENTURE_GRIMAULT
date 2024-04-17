@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 151398499196722772}
   - component: {fileID: 7375518082931557268}
   - component: {fileID: 4758570892400786936}
-  m_Layer: 0
+  - component: {fileID: -8402865691500099918}
+  m_Layer: 6
   m_Name: Ennemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +104,9 @@ MonoBehaviour:
   speed: 1.5
   distanceBetween: 3
   animator: {fileID: 7375518082931557268}
+  enemyHealth: 20
+  attackDamage: 10
+  damageOnCollision: 20
 --- !u!95 &7375518082931557268
 Animator:
   serializedVersion: 5
@@ -159,3 +163,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.2370474}
   serializedVersion: 2
   m_Radius: 0.2629526
+--- !u!114 &-8402865691500099918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793196974541904450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6c9fe92e1deb349ac98d5d24d3f492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 20
+  attackDamage: 10
