@@ -104,8 +104,6 @@ MonoBehaviour:
   speed: 1.5
   distanceBetween: 3
   animator: {fileID: 7375518082931557268}
-  enemyHealth: 20
-  attackDamage: 10
   damageOnCollision: 20
 --- !u!95 &7375518082931557268
 Animator:
@@ -175,5 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6c9fe92e1deb349ac98d5d24d3f492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 20
+  animator: {fileID: 7375518082931557268}
+  enemyHealth: 10
   attackDamage: 10
+  circleCollider: {fileID: 4758570892400786936}

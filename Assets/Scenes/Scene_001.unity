@@ -170,6 +170,16 @@ Transform:
   - {fileID: 1276082276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &422549444 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4758570892400786936, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
+  m_PrefabInstance: {fileID: 935184796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &422549445 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7375518082931557268, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
+  m_PrefabInstance: {fileID: 935184796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464348631
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +814,7 @@ GameObject:
   - component: {fileID: 771536090}
   - component: {fileID: 771536089}
   - component: {fileID: 771536088}
+  - component: {fileID: 771536092}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -895,6 +906,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &771536092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771536087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7408db4bb71b4b14eb15d058b2e3b922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &915756530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,9 +1096,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8402865691500099918, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 422549445}
+    - target: {fileID: -8402865691500099918, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
+      propertyPath: circleCollider
+      value: 
+      objectReference: {fileID: 422549444}
     - target: {fileID: 151398499196722772, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
       propertyPath: speed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402785398243106037, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3511935253220400289, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5297,9 +5332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 64
+  circleCollider: {fileID: 1592888781}
   animator: {fileID: 2040875556}
   checkEnemy: {fileID: 1592888780}
 --- !u!1 &2091423079

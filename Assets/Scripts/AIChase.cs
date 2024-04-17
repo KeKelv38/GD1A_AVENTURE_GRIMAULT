@@ -12,6 +12,19 @@ public class AIChase : MonoBehaviour
 
     public int damageOnCollision = 20;
 
+    public static AIChase instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de AiChase dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

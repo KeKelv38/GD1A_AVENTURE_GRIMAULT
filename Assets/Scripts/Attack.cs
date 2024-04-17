@@ -8,7 +8,8 @@ public class Attack : MonoBehaviour
     private float attackCounter = 0.25f;
     public bool isAttacking;
 
-    public LayerMask whatIsEnemy;
+    public CircleCollider2D circleCollider;
+
 
     public Animator animator;
     [SerializeField] Transform checkEnemy;
@@ -17,7 +18,7 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        circleCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -31,11 +32,13 @@ public class Attack : MonoBehaviour
             {
                 animator.SetBool("isAttacking", false);
                 isAttacking = false;
+                circleCollider.enabled = false;
             }
         }
 
         if (Input.GetMouseButtonDown(0))
         {
+            circleCollider.enabled = true;
             attackCounter = attackTime;
             animator.SetBool("isAttacking", true);
             isAttacking = true;

@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
 
     public int enemyHealth = 20;
     public int attackDamage = 10;
 
-    // Start is called before the first frame update
+    public CircleCollider2D circleCollider;
+
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+
     }
-    public void EnemyTakeDamage()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         enemyHealth -= attackDamage;
+        if(enemyHealth <= 0) 
+        {
+            StartCoroutine(DeathEnemy());
+        }
     }
 
+    IEnumerator DeathEnemy()
+    {
+        animator.SetBool("isDead", true);
+        circleCollider.enabled = false;
+        AIChase.instance.enabled = false;
+        yield return new WaitForSeconds(2);
+    }
 }
