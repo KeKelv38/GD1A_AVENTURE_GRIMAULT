@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool isInRange;
 
     private GameObject interactUI;
+    private bool isTalking = false;
 
     private void Awake()
     {
@@ -15,9 +16,12 @@ public class DialogueTrigger : MonoBehaviour
     }
     void Update()
     {
-        if(isInRange && Input.GetKeyDown(KeyCode.E))
+        if(isInRange && Input.GetKeyDown(KeyCode.E) && !isTalking)
         {
             TriggerDialogue();
+        }else if(isInRange && Input.GetKeyDown(KeyCode.E) && isTalking)
+        {
+            DialogueManager.instance.DisplayNextSentence();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,12 +38,15 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isInRange = false;
+            isTalking = false;
+            DialogueManager.instance.EndDialogue();
         }
     }
 
     void TriggerDialogue()
     {
         DialogueManager.instance.StartDialogue(dialogue);
+        isTalking = true;
     }
 
 }

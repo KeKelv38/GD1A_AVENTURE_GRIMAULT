@@ -37,8 +37,9 @@ public class PlayerHealth : MonoBehaviour
 
             if(currentHealth <= 0)
             {
-                basicMovement.enabled = false;
-                Die();
+                StartCoroutine(Die());
+                
+
             }
             else
             {
@@ -69,12 +70,12 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         isInvicible = false;
     }
-    public void Die()
+    public IEnumerator Die()
     {
-       
-       
+        basicMovement.enabled = false;
         animator.SetBool("isDead", true);
-        
-        
+        yield return new WaitForSeconds(3f);
+        GameOverManager.gameOverManager.OnPlayerDeath();
+
     }
 }

@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public Animator animator;
 
-    public int enemyHealth = 100;
+    public int enemyHealth = 10;
 
     public CircleCollider2D circleCollider;
 
