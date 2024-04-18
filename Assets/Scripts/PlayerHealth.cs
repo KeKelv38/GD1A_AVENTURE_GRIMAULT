@@ -11,8 +11,12 @@ public class PlayerHealth : MonoBehaviour
     public float invicibilityFlashDelay = 0.2f;
     public bool isInvicible = false;
 
+    public Animator animator;
+
     public SpriteRenderer graphics;
     public HealthBar healthBar;
+
+    public BasicMovement basicMovement;
     void Start()
     {
         currentHealth = maxHealth;
@@ -30,9 +34,21 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
-            isInvicible = true;
-            StartCoroutine(InvicibilityFlash());
-            StartCoroutine(HandleInvicibilityDelay());
+
+            if(currentHealth <= 0)
+            {
+                basicMovement.enabled = false;
+                Die();
+            }
+            else
+            {
+                isInvicible = true;
+
+                StartCoroutine(InvicibilityFlash());
+                StartCoroutine(HandleInvicibilityDelay());
+            }
+            
+            
         }
         
     }
@@ -52,5 +68,13 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         isInvicible = false;
+    }
+    public void Die()
+    {
+       
+       
+        animator.SetBool("isDead", true);
+        
+        
     }
 }

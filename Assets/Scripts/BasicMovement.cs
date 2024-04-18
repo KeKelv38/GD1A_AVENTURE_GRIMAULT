@@ -2,13 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Basic_Movement : MonoBehaviour
+public class BasicMovement : MonoBehaviour
 {
     public Animator animator;
     [SerializeField] public float Movespeed = 5f;
 
 
     [SerializeField] Transform checkEnemy;
+
+    public static BasicMovement basicMovement;
+
+    private void Awake()
+    {
+        if (basicMovement != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de BasicMovement dans la scène");
+            return;
+        }
+
+        basicMovement = this;
+    }
 
 
     void Update()

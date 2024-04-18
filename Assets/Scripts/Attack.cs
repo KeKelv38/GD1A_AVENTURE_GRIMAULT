@@ -8,10 +8,12 @@ public class Attack : MonoBehaviour
     private float attackCounter = 0.25f;
     public bool isAttacking;
 
+    public int attackDamage = 10;
+
     public CircleCollider2D circleCollider;
 
-
     public Animator animator;
+
     [SerializeField] Transform checkEnemy;
 
 

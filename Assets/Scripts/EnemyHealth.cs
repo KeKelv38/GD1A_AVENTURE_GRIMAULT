@@ -6,13 +6,15 @@ public class EnemyHealth : MonoBehaviour
 {
     public Animator animator;
 
-    public int enemyHealth = 20;
-    public int attackDamage = 10;
+    public int enemyHealth = 100;
 
     public CircleCollider2D circleCollider;
 
+    public Attack attack;
+
     void Start()
     {
+
     }
 
     private void Update()
@@ -21,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        enemyHealth -= attackDamage;
+        enemyHealth -= attack.attackDamage;
         if(enemyHealth <= 0) 
         {
             StartCoroutine(DeathEnemy());
@@ -30,9 +32,8 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator DeathEnemy()
     {
-        animator.SetBool("isDead", true);
+        animator.SetTrigger("isDead");
         circleCollider.enabled = false;
-        AIChase.instance.enabled = false;
         yield return new WaitForSeconds(2);
     }
 }
