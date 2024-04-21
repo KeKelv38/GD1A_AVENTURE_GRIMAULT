@@ -17,6 +17,19 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
 
     public BasicMovement basicMovement;
+
+    public static PlayerHealth playerHealth;
+
+    private void Awake()
+    {
+        if (playerHealth != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerHealth dans la scène");
+            return;
+        }
+        playerHealth = this;
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -25,6 +38,20 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        
+    }
+
+    public void HealPlayer(int amount)
+    {
+        if((currentHealth + amount) > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += amount;
+            healthBar.SetHealth(currentHealth);
+        }
         
     }
 
@@ -77,5 +104,13 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(3f);
         GameOverManager.gameOverManager.OnPlayerDeath();
 
+    }
+
+    public void Respawn()
+    {
+        basicMovement.enabled = true;
+        animator.SetBool("Respawn", true);
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
     }
 }

@@ -20,12 +20,18 @@ public class GameOverManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
+        if (CurrentSceneManager.currentSceneManager.isPlayerPresentByDefault)
+        {
+            DontDestroyOnLoadScene.dontDestroyOnLoadScene.RemoveFromDontDestroyOnLoad();
+        }
         gameOverUI.SetActive(true);
     }
 
     public void retryButton()
     {
+        Inventory.inventory.RemoveCrystals(CurrentSceneManager.currentSceneManager.crystalsPickedUpInThisSceneCount);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerHealth.playerHealth.Respawn();
         gameOverUI.SetActive(false);
     }
 
