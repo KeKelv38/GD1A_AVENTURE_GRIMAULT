@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance;
+    public static DialogueManager dialogueManager;
     public Text nameText;
     public Text dialogueText;
 
@@ -14,12 +14,12 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private void Awake()
     {
-        if (instance != null)
+        if (dialogueManager != null)
         {
             Debug.LogWarning("Il y a plus d'une instance de DialogueManager dans la scène");
             return;
         }
-        instance = this;
+        dialogueManager = this;
 
         sentences = new Queue<string>();
     }

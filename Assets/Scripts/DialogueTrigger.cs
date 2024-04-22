@@ -21,7 +21,7 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
         }else if(isInRange && Input.GetKeyDown(KeyCode.E) && isTalking)
         {
-            DialogueManager.instance.DisplayNextSentence();
+            DialogueManager.dialogueManager.DisplayNextSentence();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,13 +39,13 @@ public class DialogueTrigger : MonoBehaviour
         {
             isInRange = false;
             isTalking = false;
-            DialogueManager.instance.EndDialogue();
+            DialogueManager.dialogueManager.EndDialogue();
         }
     }
 
     void TriggerDialogue()
     {
-        DialogueManager.instance.StartDialogue(dialogue);
+        DialogueManager.dialogueManager.StartDialogue(dialogue);
         isTalking = true;
     }
 

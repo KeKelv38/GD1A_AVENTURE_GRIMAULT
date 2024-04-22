@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicMovement : MonoBehaviour
 {
     public Animator animator;
-    [SerializeField] public float Movespeed = 5f;
+    [SerializeField] public float Movespeed = 10f;
 
 
     [SerializeField] Transform checkEnemy;
@@ -21,6 +21,8 @@ public class BasicMovement : MonoBehaviour
         }
 
         basicMovement = this;
+
+        Movespeed = 3f;
     }
 
 
