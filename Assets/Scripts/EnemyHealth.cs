@@ -10,11 +10,11 @@ public class EnemyHealth : MonoBehaviour
 
     public CircleCollider2D circleCollider;
 
-    public Attack attack;
+    public AIChase aIChase;
 
     void Start()
     {
-
+        
     }
 
     private void Update()
@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        enemyHealth -= attack.attackDamage;
+        enemyHealth -= Attack.attack.attackDamage;
         if(enemyHealth <= 0) 
         {
             StartCoroutine(DeathEnemy());
@@ -34,6 +34,8 @@ public class EnemyHealth : MonoBehaviour
     {
         animator.SetTrigger("isDead");
         circleCollider.enabled = false;
+        this.GetComponent<AIChase>().enabled = false;
+        aIChase.enabled = false;
         yield return new WaitForSeconds(2);
     }
 }

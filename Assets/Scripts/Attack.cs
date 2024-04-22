@@ -16,8 +16,20 @@ public class Attack : MonoBehaviour
 
     [SerializeField] Transform checkEnemy;
 
+    public static Attack attack;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (attack != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de Attack dans la scène");
+            return;
+        }
+        attack = this;
+    }
+
+
+
     void Start()
     {
         circleCollider.enabled = false;

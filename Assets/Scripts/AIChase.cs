@@ -12,6 +12,7 @@ public class AIChase : MonoBehaviour
 
     public int damageOnCollision = 100;
 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
