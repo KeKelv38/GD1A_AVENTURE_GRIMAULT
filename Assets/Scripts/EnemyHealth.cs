@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
 
     public CircleCollider2D circleCollider;
 
+    public GameObject itemToDrop;
+
     public AIChase aIChase;
 
     void Start()
@@ -36,6 +38,23 @@ public class EnemyHealth : MonoBehaviour
         circleCollider.enabled = false;
         this.GetComponent<AIChase>().enabled = false;
         aIChase.enabled = false;
+        DropItem();
         yield return new WaitForSeconds(2);
     }
+
+    private void DropItem()
+    {
+        // Vérifier si l'objet à laisser tomber est défini
+        if (itemToDrop != null)
+        {
+            // Instancier l'objet à la position de l'ennemi
+            Instantiate(itemToDrop, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Aucun objet à laisser tomber n'est défini pour cet ennemi !");
+        }
+    }
+
+
 }

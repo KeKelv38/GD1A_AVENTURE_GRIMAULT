@@ -10,6 +10,8 @@ public class KeyManager : MonoBehaviour
     private Vector2 vel;
     public float smoothTime;
 
+    public bool exist = true;
+
     public static KeyManager keyManager;
 
     private void Awake()
@@ -25,7 +27,7 @@ public class KeyManager : MonoBehaviour
 
     private void Update()
     {
-        if (isPickedUp)
+        if (isPickedUp && exist)
         {
             Vector3 offset = new Vector3(-0.5f, 0.5f, 0);
             transform.position = Vector2.SmoothDamp(transform.position, player.transform.position + offset, ref vel, smoothTime);
@@ -34,9 +36,15 @@ public class KeyManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player") && !isPickedUp)
+        if(other.gameObject.CompareTag("Player") && !isPickedUp && exist)
         {
             isPickedUp = true;
         }
+    }
+
+    public void CanDestroy()
+    {
+        exist = false;
+        Destroy(gameObject);
     }
 }

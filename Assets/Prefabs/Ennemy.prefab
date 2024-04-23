@@ -177,7 +177,8 @@ MonoBehaviour:
   animator: {fileID: 819794851353953067}
   enemyHealth: 10
   circleCollider: {fileID: 8222068782772146973}
-  attack: {fileID: 0}
+  itemToDrop: {fileID: 8478604534268298557, guid: 1d05dee30ef95a74e98938fd6ba9068f, type: 3}
+  aIChase: {fileID: 6009560701013672450}
 --- !u!50 &3777603636486470563
 Rigidbody2D:
   serializedVersion: 4

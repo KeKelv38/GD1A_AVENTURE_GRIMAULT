@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TriggerZoneToOpenDoor : MonoBehaviour
@@ -22,6 +23,7 @@ public class TriggerZoneToOpenDoor : MonoBehaviour
         if (canOpen)
         {
             OpenDoor();
+            KeyManager.keyManager.CanDestroy();
         }
     }
 
