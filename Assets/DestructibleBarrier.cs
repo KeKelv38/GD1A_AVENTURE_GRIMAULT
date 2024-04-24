@@ -8,7 +8,7 @@ public class DestructibleBarrier : MonoBehaviour
     {
         if (collision.CompareTag("AttackZone"))
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         
     }
