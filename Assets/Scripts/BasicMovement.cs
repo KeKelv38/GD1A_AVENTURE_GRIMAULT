@@ -36,14 +36,29 @@ public class BasicMovement : MonoBehaviour
 
         transform.position = transform.position + movement * Time.deltaTime;
 
-        if (animator.GetFloat("Horizontal") == 1)
+        if (animator.GetFloat("Horizontal") > 0.01)
         {
-            animator.SetFloat("lastMoveX", animator.GetFloat("Horizontal"));
+            animator.SetFloat("lastMoveX", 1);
+            animator.SetFloat("lastMoveY", 0);
         }
 
-        if (animator.GetFloat("Vertical") == 1)
+        if (animator.GetFloat("Vertical") > 0.01)
         {
-            animator.SetFloat("lastMoveY", animator.GetFloat("Vertical"));
+            animator.SetFloat("lastMoveY", 1);
+            animator.SetFloat("lastMoveX", 0);
+
+        }
+
+        if (animator.GetFloat("Horizontal") < -0.01)
+        {
+            animator.SetFloat("lastMoveX", -1);
+            animator.SetFloat("lastMoveY", 0);
+        }
+
+        if (animator.GetFloat("Vertical") < -0.01)
+        {
+            animator.SetFloat("lastMoveY", -1);
+            animator.SetFloat("lastMoveX", 0);
         }
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    private float attackTime = 0.25f;
-    private float attackCounter = 0.25f;
+    private float attackTime = 0.7f;
+    private float attackCounter = 1f;
     public bool isAttacking;
 
     public int attackDamage = 10;

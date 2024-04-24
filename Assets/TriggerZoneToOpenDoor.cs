@@ -23,7 +23,7 @@ public class TriggerZoneToOpenDoor : MonoBehaviour
         if (canOpen)
         {
             OpenDoor();
-            KeyManager.keyManager.CanDestroy();
+           if(KeyManager.keyManager != null) KeyManager.keyManager.CanDestroy();
         }
     }
 
