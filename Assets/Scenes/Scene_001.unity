@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2040875552}
   isPickedUp: 0
-  smoothTime: 0.5
+  smoothTime: 0.1
   exist: 1
 --- !u!212 &77609378
 SpriteRenderer:
@@ -1354,11 +1354,12 @@ MonoBehaviour:
   dialogue:
     name: Le vieux Chef
     sentences:
-    - "Tu es enfin r\xE9par\xE9. Je peux donc te donner la mission."
-    - "J'ai r\xE9ussi \xE0 capturer un \"smile\". Je vais le signaler au vaisseau
-      m\xE8re.\n"
+    - "Tu es enfin r\xE9par\xE9 ? Enfin presque... Tu va devoir abandonner l'id\xE9e
+      d'utiliser ton bras gauche..."
+    - "De mon c\xF4t\xE9 j'ai r\xE9ussi \xE0 capturer un \"smile\". Je vais le signaler
+      au vaisseau m\xE8re.\n"
     - "Je te laisse exterminer tous les autres. Je sais que tu ne me d\xE9cevras
-      pas."
+      pas m\xEAme avec un bras en moins."
     - "Il ne doit rester aucune de ces cr\xE9atures inf\xE2mes."
   isInRange: 0
 --- !u!4 &682294211
@@ -6447,7 +6448,7 @@ Transform:
   m_GameObject: {fileID: 2040875552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.18, y: 9.16, z: 0}
+  m_LocalPosition: {x: 21.55, y: 1.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

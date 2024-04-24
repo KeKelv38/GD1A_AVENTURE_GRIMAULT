@@ -25,10 +25,13 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        enemyHealth -= Attack.attack.attackDamage;
-        if(enemyHealth <= 0) 
+        if (collision.CompareTag("AttackZone"))
         {
-            StartCoroutine(DeathEnemy());
+            enemyHealth -= Attack.attack.attackDamage;
+            if (enemyHealth <= 0)
+            {
+                StartCoroutine(DeathEnemy());
+            }
         }
     }
 
