@@ -8,28 +8,9 @@ public class ItemFollowPlayer : MonoBehaviour
     public float smoothTime;
     private Vector2 vel;
 
+    [SerializeField] GameObject crystalShield;
+
     public PlayerHealth playerHealth;
-    
-
-    public static ItemFollowPlayer instance;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    private void Awake()
-    {
-
-
-        if (instance != null)
-        {
-            return;
-        }
-
-        instance = this;
-    }
 
     // Update is called once per frame
     void Update()
@@ -60,5 +41,14 @@ public class ItemFollowPlayer : MonoBehaviour
             
             
         }
+    }
+
+    public void DestroyCrystalShield()
+    {
+        if(crystalShield != null)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

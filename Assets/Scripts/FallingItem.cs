@@ -20,4 +20,5 @@ public class FallingItem : MonoBehaviour
         // Mettre à jour la position de l'objet
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
+
 }

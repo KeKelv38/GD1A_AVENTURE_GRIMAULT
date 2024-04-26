@@ -40,15 +40,16 @@ public class Shield : MonoBehaviour
     public void SetActiveShield()
     {
         shieldObject.SetActive(true);
-        Debug.Log("Le shield est activer");
-        yield return new WaitForSeconds(10f);
-        SetNotActiveShield();
+        Debug.Log("Le shield est activé");
+        //yield return new WaitForSeconds(10f);
+        //SetNotActiveShield();
 
     }
 
     public void SetNotActiveShield()
     {
         shieldObject.SetActive(false);
+
 
     }
 

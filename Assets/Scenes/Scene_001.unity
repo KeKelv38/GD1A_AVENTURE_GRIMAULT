@@ -1214,7 +1214,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629053095}
-  - component: {fileID: 629053096}
   - component: {fileID: 629053098}
   - component: {fileID: 629053097}
   m_Layer: 5
@@ -1245,18 +1244,6 @@ RectTransform:
   m_AnchoredPosition: {x: 369, y: -122}
   m_SizeDelta: {x: 505.6039, y: 98.440094}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &629053096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629053094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07d5a24c6f201b24e82d39f75805df9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &629053097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4028,7 +4015,7 @@ GameObject:
   - component: {fileID: 1404473221}
   - component: {fileID: 1404473220}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: CrystalShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4048,6 +4035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPickedUp: 0
   smoothTime: 0.1
+  crystalShield: {fileID: 1404473219}
   playerHealth: {fileID: 2040875561}
 --- !u!58 &1404473221
 CircleCollider2D:
@@ -6896,6 +6884,7 @@ MonoBehaviour:
   healthBar: {fileID: 629053097}
   basicMovement: {fileID: 2040875553}
   shield: {fileID: 1385081514}
+  itemFollowPlayer: {fileID: 1404473220}
 --- !u!114 &2040875562
 MonoBehaviour:
   m_ObjectHideFlags: 0

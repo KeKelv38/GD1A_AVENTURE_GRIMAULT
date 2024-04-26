@@ -19,11 +19,14 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
 
     public BasicMovement basicMovement;
+    
+    public Shield shield;
+    public ItemFollowPlayer itemFollowPlayer;
 
     public static PlayerHealth playerHealth;
 
 
-    public Shield shield;
+    
     private void Awake()
     {
         if (playerHealth != null)
@@ -51,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+       
     }
 
     public void HealPlayer(int amount)
@@ -69,7 +73,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!isInvicible)
+        if (!isInvicible && shieldOn == false)
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
@@ -128,11 +132,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void IsShielded()
     {
+        shieldOn = true;
         shield.SetActiveShield();
         Debug.Log("True");
-       // yield return new WaitForSeconds(10f);
-       // shieldOn = false;
-       // shield.SetNotActiveShield();
+        StartCoroutine(ShieldExpired());
         
+    }
+
+    public IEnumerator ShieldExpired()
+    {
+        yield return new WaitForSeconds(3f);
+        shieldOn = false;
+        shield.SetNotActiveShield();
+        itemFollowPlayer.DestroyCrystalShield();
+
     }
 }
