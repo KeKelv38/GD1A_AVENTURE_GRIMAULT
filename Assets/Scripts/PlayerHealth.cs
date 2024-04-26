@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public float invicibilityFlashDelay = 0.2f;
     public bool isInvicible = false;
 
+    public bool shieldOn = false;
+
     public Animator animator;
 
     public SpriteRenderer graphics;
@@ -20,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
 
     public static PlayerHealth playerHealth;
 
+
+    public Shield shield;
     private void Awake()
     {
         if (playerHealth != null)
@@ -34,11 +38,19 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        if (shieldOn == false)
+        {
+            isInvicible = false;
+        }
+        else
+        {
+            isInvicible = true;
+        }
     }
 
     void Update()
     {
-        
     }
 
     public void HealPlayer(int amount)
@@ -112,5 +124,15 @@ public class PlayerHealth : MonoBehaviour
         animator.SetBool("Respawn", true);
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
+    }
+
+    public void IsShielded()
+    {
+        shield.SetActiveShield();
+        Debug.Log("True");
+       // yield return new WaitForSeconds(10f);
+       // shieldOn = false;
+       // shield.SetNotActiveShield();
+        
     }
 }
