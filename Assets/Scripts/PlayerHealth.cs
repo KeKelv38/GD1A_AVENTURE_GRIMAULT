@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public BasicMovement basicMovement;
     
     public Shield shield;
+    public float shieldDuration = 10f;
     public ItemFollowPlayer itemFollowPlayer;
 
     public static PlayerHealth playerHealth;
@@ -141,7 +142,7 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator ShieldExpired()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(shieldDuration);
         shieldOn = false;
         shield.SetNotActiveShield();
         itemFollowPlayer.DestroyCrystalShield();
