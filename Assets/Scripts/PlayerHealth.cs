@@ -99,6 +99,25 @@ public class PlayerHealth : MonoBehaviour
             
             
         }
+        else if (!isInvicible && shield == true)
+        {
+            currentHealth -= damage/2;
+            healthBar.SetHealth(currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                StartCoroutine(Die());
+
+
+            }
+            else
+            {
+                isInvicible = true;
+
+                StartCoroutine(InvicibilityFlash());
+                StartCoroutine(HandleInvicibilityDelay());
+            }
+        }
         
     }
 
@@ -140,7 +159,7 @@ public class PlayerHealth : MonoBehaviour
         shieldOn = true;
         shield.SetActiveShield();
         Debug.Log("True");
-        StartCoroutine(ShieldExpired());
+        //StartCoroutine(ShieldExpired());
         
     }
 

@@ -50,7 +50,7 @@ public class Attack : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Return) && !PauseMenu.isPaused)
         {
             circleCollider.enabled = true;
             attackCounter = attackTime;
