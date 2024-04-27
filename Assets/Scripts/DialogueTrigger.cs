@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class DialogueTrigger : MonoBehaviour
@@ -10,9 +11,11 @@ public class DialogueTrigger : MonoBehaviour
     private GameObject interactUI;
     private bool isTalking = false;
 
+    public Text revealInteractUISymbol;
+
     private void Awake()
     {
-        
+        revealInteractUISymbol = GameObject.FindGameObjectWithTag("interactUI").GetComponent<Text>();
     }
     void Update()
     {
@@ -29,7 +32,9 @@ public class DialogueTrigger : MonoBehaviour
         
         if (collision.CompareTag("Player"))
         {
+            revealInteractUISymbol.enabled = true;
             isInRange = true;
+
         }
     }
 
@@ -37,6 +42,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            revealInteractUISymbol.enabled = false;
             isInRange = false;
             isTalking = false;
             DialogueManager.dialogueManager.EndDialogue();

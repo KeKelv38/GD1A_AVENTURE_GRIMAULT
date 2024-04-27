@@ -12,6 +12,12 @@ public class ItemFollowPlayer : MonoBehaviour
 
     public PlayerHealth playerHealth;
 
+    private void Start()
+    {
+        playerHealth = FindObjectOfType<PlayerHealth>();
+
+    }
+
     // Update is called once per frame
     void Update()
     {

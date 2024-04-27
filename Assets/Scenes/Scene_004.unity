@@ -17141,6 +17141,10 @@ PrefabInstance:
       value: "Xa le rescap\xE9"
       objectReference: {fileID: 0}
     - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: J'ai entendu des monstres inhabituels.
       objectReference: {fileID: 0}
@@ -17155,7 +17159,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: "J'en ai besoin pour retrouver de l'\xE9nergie. Ensuite je pourrai m'enfuir."
+      value: Je sais utiliser leur pouvoir.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: "J'en ai besoin pour retrouver de l'\xE9nergie. Je vais devenir invisible,
+        ensuite je pourrai m'enfuir."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: '-OUI (appuyez sur la touche O)
+
+        -NON (appuyez sur la touche
+        E)'
       objectReference: {fileID: 0}
     - target: {fileID: 5339502271386995102, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
       propertyPath: m_Name
@@ -17209,9 +17225,15 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5339502271386995102, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551404408}
     - targetCorrespondingSourceObject: {fileID: 2036964378328972814, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1551404406}
+    - targetCorrespondingSourceObject: {fileID: 2036964378328972814, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551404410}
   m_SourcePrefab: {fileID: 100100000, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
 --- !u!1 &1551404405 stripped
 GameObject:
@@ -17239,6 +17261,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1551404407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5339502271386995102, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+  m_PrefabInstance: {fileID: 1551404404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1551404408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551404407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa77138fc2a6ee541aee6119c6cd6372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PNJgraphics: {fileID: 1551404409}
+  fadeOut: {fileID: 1551404410}
+--- !u!212 &1551404409 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9094397232635320223, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+  m_PrefabInstance: {fileID: 1551404404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1551404410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551404405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f84c17d4f79d2f40baf1c3369fae74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 0.5
 --- !u!1 &1581738738
 GameObject:
   m_ObjectHideFlags: 0

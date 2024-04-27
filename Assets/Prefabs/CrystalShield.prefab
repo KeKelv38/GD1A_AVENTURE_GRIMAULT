@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5937225130188969936}
   m_Layer: 0
   m_Name: CrystalShield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,4 +136,4 @@ MonoBehaviour:
   isPickedUp: 0
   smoothTime: 0.1
   crystalShield: {fileID: 5141112486403432716}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 711681755151302102, guid: ac4f9039507639f4b8c3c0c368bad161, type: 3}

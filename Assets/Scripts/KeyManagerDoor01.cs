@@ -18,12 +18,18 @@ public class KeyManager : MonoBehaviour
     {
         if (keyManager != null)
         {
-            Debug.LogWarning("Il y a plus d'une instance de BasicMovement dans la scène");
+            Debug.LogWarning("Il y a plus d'une instance de keyManager dans la scène");
             return;
         }
 
         keyManager = this;
     }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
     private void Update()
     {
