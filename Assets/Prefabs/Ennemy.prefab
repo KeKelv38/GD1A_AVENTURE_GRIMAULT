@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 1.5
+  speed: 1
   distanceBetween: 2
   animator: {fileID: 819794851353953067}
   damageOnCollision: 20
