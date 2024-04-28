@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class BasicMovement : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BasicMovement : MonoBehaviour
     [SerializeField] Transform checkEnemy;
 
     public static BasicMovement basicMovement;
+
+    private PlayerInputActions _inputActions;
 
     private void Awake()
     {
@@ -25,6 +28,11 @@ public class BasicMovement : MonoBehaviour
         Movespeed = 3f;
     }
 
+    private void OnEnable()
+    {
+        _inputActions = new PlayerInputActions();
+        _inputActions.Gameplay.Enable();
+    }
 
     void Update()
     {
