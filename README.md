@@ -7,4 +7,4 @@ Quelques fonctionnalités ne fonctionnent pas:
 -pas de control manette à part les mouvement du joueur au joystick
 
 
- PS: pour la doc 2D, j'ai envoyé mon dossier par mail à Tristan directmenent.
+ PS: pour la doc 2D, j'ai envoyé mon dossier par mail à Tristan directement.
