@@ -11,6 +11,7 @@ TagManager:
   - DestructibleBarrier
   - interactUI
   - Shield
+  - ZoneToOpenDoor01
   layers:
   - Default
   - TransparentFX

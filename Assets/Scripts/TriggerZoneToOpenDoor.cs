@@ -11,6 +11,19 @@ public class TriggerZoneToOpenDoor : MonoBehaviour
 
     private bool canOpen = false;
 
+    public static TriggerZoneToOpenDoor triggerZoneToOpenDoor;
+
+    private void Awake()
+    {
+        if (triggerZoneToOpenDoor != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de triggerZoneToOpenDoor dans la scène");
+            return;
+        }
+
+        triggerZoneToOpenDoor = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +35,7 @@ public class TriggerZoneToOpenDoor : MonoBehaviour
     {
         if (canOpen)
         {
-            OpenDoor();
+           OpenDoor();
            if(KeyManager.keyManager != null) KeyManager.keyManager.CanDestroy();
         }
     }
@@ -35,7 +48,7 @@ public class TriggerZoneToOpenDoor : MonoBehaviour
         }
     }
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
         door.transform.position = Vector3.MoveTowards(door.transform.position, target.transform.position, speed);
     }

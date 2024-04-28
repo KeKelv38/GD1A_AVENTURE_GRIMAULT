@@ -4232,11 +4232,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3105369620443159681, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.81
+      value: 17.27
       objectReference: {fileID: 0}
     - target: {fileID: 3105369620443159681, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.53
+      value: -2.83
       objectReference: {fileID: 0}
     - target: {fileID: 3105369620443159681, guid: f0b774e01b62d0646bf3d303864c4948, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6977,7 +6977,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 472115476227163000, guid: 6d36345a258b15e42989e85d69430c47, type: 3}
       propertyPath: sceneBuildIndex
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1150675194843595707, guid: 6d36345a258b15e42989e85d69430c47, type: 3}
       propertyPath: m_Size.y
@@ -7767,11 +7767,11 @@ PrefabInstance:
       objectReference: {fileID: 629053097}
     - target: {fileID: 767940873588631903, guid: ac4f9039507639f4b8c3c0c368bad161, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.85
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 767940873588631903, guid: ac4f9039507639f4b8c3c0c368bad161, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 767940873588631903, guid: ac4f9039507639f4b8c3c0c368bad161, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7808,6 +7808,10 @@ PrefabInstance:
     - target: {fileID: 2711716405941751961, guid: ac4f9039507639f4b8c3c0c368bad161, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248552706732121723, guid: ac4f9039507639f4b8c3c0c368bad161, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7940,6 +7944,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037755140738971470, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: "Un conseil, r\xE9cup\xE8re le plus de crystaux."
+      objectReference: {fileID: 0}
     - target: {fileID: 5339502271386995102, guid: 3ac85d04cd0fe9548b78ffd455c92026, type: 3}
       propertyPath: m_Name
       value: NPC01

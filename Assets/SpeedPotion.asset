@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SpeedPotion
   m_EditorClassIdentifier: 
   id: 1
-  name: Speed Potion
+  itemName: 
   description: Potion giving a speed bonus
   image: {fileID: 21300000, guid: 1b6d4a8a79c5400408cc98e881816e6c, type: 3}
-  speedGiven: 3
-  speedDuration: 10
+  speedGiven: 1
+  speedDuration: 8
